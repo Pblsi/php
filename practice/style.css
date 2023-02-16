@@ -1,0 +1,14 @@
+*{
+    border: 0;
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto;
+    border: solid 1px;
+    border-radius: 20px;
+    background-color: bisque;
+    height: 300px;
+    width: auto;
+}

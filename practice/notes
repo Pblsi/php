@@ -1,0 +1,62 @@
+http://localhost/php-learning/cms/includes/db.php      
+      
+      git add .
+      
+      git commit -m "message"
+
+      git push
+
+<!-- <?php
+
+echo "Hello World";
+
+echo "<br>";
+$name = "Blessing";
+
+echo "my name is". " " . $name;
+
+?> -->
+
+CRUD
+C-create(post)
+R-Read(get)
+U-Update(patch/put)
+D-Delete(delete)
+
+data types
+arrays
+function
+
+types of php coding
+1. procedural   2. object oriented
+______________________
+Types of operators
+______________________
+1. logical  2. Comparison
+************
+logical Operators; 
+Amd (&&)
+Or (||)
+not (!)
+______________________
+*************
+Comparison Operators;
+equal=
+identical ===
+compare > <  >= <= <>
+not equal !=
+not identical !==
+______________________
+
+HTTP REQUESTS:
+Forms
+Url/Links
+Cookies
+Sessions
+_______________________
+Properties:- Variables Arrays Data
+Methods:- Functions/Behaviors
+OBJECT : an object could be a variable, function, any data structure inside the program
+Example of an Object : Properties // method
+
+WHAT ARE CLASSES:-
