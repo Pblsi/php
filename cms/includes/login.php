@@ -36,7 +36,7 @@ $_SESSION['password'] =$db_password;
 $_SESSION['firstname'] =$db_user_firstname;
 $_SESSION['lastname'] =$db_user_lastname;
 $_SESSION['user_role'] =$db_user_role;
-header("Location: ../post.php");
+header("Location: ../admin");
 
 } else {
     header("Location: ../index.php");
