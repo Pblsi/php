@@ -162,41 +162,57 @@ echo "<div class='huge'>{$category_counts}</div>"
 </div>
                 <!-- /.row -->
 
+<?php
+
+$query = "SELECT * FROM posts WHERE post_status = 'draft'";
+$select_all_draft_posts = mysqli_query($connection, $query);
+$post_draft_count = mysqli_num_rows($select_all_draft_posts);
+
+$query = "SELECT * FROM comments WHERE comment_status = 'Unapproved'";
+$Unapproved_comments_query = mysqli_query($connection, $query);
+$Unapproved_comment_count = mysqli_num_rows($Unapproved_comments_query);
+
+$query = "SELECT * FROM users WHERE user_role = 'subscriber'";
+$select_all_subscribers = mysqli_query($connection, $query);
+$subscriber_count = mysqli_num_rows($select_all_subscribers);
+
+?>
+
                 <div class="row">
 
-<script type="text/javascript">
-    google.load("visualization", "1.1", {packages:["bar"]});
-    google.setOnloadCallback(drawChart);
-    function drawChart() {
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Data', 'count'],
+          ['Data', 'count'],
 
 <?php
 
-$element_text = ['Active Posts', 'Comments', 'Users', 'Categories'];
-$element_count = [$post_count, $comment_count, $user_count, $category_count ];
-for ($i=0; $i < 4; $i++) { 
+$element_text = ['Active Posts', 'Draft Posts', 'Comments', 'Pending Comments', 'Users', 'Subscribers','Categories'];
+$element_count = [$post_count, $post_draft_count, $comment_count, $Unapproved_comment_count, $user_count, $subscriber_count,$category_count ];
+for ($i=0; $i < 7; $i++) { 
     echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
 }
 
 ?>
 
             // ['Posts', 1000],
-        ]);
-        var options = {
-            chart: {
-                title: ''
-                subtitle: '',
-            }
+])
+            var options = {
+          chart: {
+            title: '',
+            subtitle: '',
+          }
         };
-        var chart = new 
-        google.charts.Bar(document.getElementById('columnchart_material'));
-        chart.draw(data, options);
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
     }
-</script>
-
-<div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
-
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+    </script>
+     <div id="columnchart_material" style="width: auto; height: 500px;"></div>
+    
                 </div>
 
 
