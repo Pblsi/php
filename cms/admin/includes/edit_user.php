@@ -37,6 +37,17 @@ if(isset($_POST['edit_user'])) {
     
 
 // move_uploaded_file($post_image_temp, "../images/$post_image");
+
+$query = "SELECT randSalt FROM users";
+$select_randsalt_query = mysqli_query($connection, $query);
+if(!$select_randsalt_query) {
+    die("Query Failed" . mysqli_error($connection));
+}
+
+$row = mysqli_fetch_array($select_randsalt_query);
+$salt = $row['randSalt'];
+$hashed_password = crypt($user_password, $salt);
+
 $query = "UPDATE users SET ";
 $query .="user_firstname  = '{$user_firstname}', ";
 $query .="user_lastname = '{$user_lastname}', ";
@@ -68,7 +79,7 @@ confirm($edit_user_query);
 <div class="form-group">
 
 <select name="user_role" id="">
-    <option value="subscriber"><?php echo $user_role ?></option>    
+    <option value="<?php echo $user_role ?>"><?php echo $user_role ?></option>    
 
 <?php
 
