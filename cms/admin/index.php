@@ -2,6 +2,11 @@
 
 <div id="wrapper">
 
+<?php
+
+
+?>
+
         <!-- Navigation -->
 
         <?php include "includes/navigation.php"?>

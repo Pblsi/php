@@ -32,7 +32,14 @@ $(document).ready(function(){
 
 });
 
+function loadUsersOnline(){
+    $.get("functions.php?onlineusers=result", function(data){
+        $(".users_online").text(data);
+    });
+}
 
-// $(document).ready(function() {
-//     $('#summernote').summernote();
-//   });
+setInterval(function(){
+    
+    loadUsersOnline();
+    
+}, 500);
