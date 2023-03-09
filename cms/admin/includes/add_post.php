@@ -47,7 +47,7 @@ or <a href='posts.php'> Edit More Posts </a> </p>";
 </div>
 
 <div class="form-group">
-
+<label for="category">Category</label>
 <select name="post_category" id="post_category">
 <?php
 $query = "SELECT * FROM categories";
@@ -68,9 +68,30 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 </div>
 
 <div class="form-group">
+<label for="users">Users</label>
+<select name="post_category" id="post_category">
+<?php
+$user_query = "SELECT * FROM users";
+$select_users = mysqli_query($connection, $user_query);
+
+confirm($select_users);
+
+while ($row = mysqli_fetch_assoc($select_users)) {
+$user_id =  $row['user_id'];
+$username =  $row['username'];
+
+echo "<option value='{$user_id}'>{$username}</option>";
+
+}
+?>
+</select>
+
+</div>
+
+<!-- <div class="form-group">
     <label for="title"> Post Author</label>
     <input type="text" class="form-control" name="author">
-</div>
+</div> -->
 
 <div class="form-group">
 <select name="post_status" id="">

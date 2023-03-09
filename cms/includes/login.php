@@ -27,18 +27,18 @@ if(isset($_POST['login'])) {
         $db_user_role = $row['user_role'];
 }
 
-if (password_verify($password,$db_password)){
+if (password_verify($password,$db_user_password)){
 
 $_SESSION['username'] =$db_username;
-$_SESSION['password'] =$db_password;
+$_SESSION['password'] =$db_user_password;
 $_SESSION['firstname'] =$db_user_firstname;
 $_SESSION['lastname'] =$db_user_lastname;
 $_SESSION['user_role'] =$db_user_role;
 
 header("Location: ../admin");
 
-} else {
-    header("Location: ../index.php");
+// } else {
+//     header("Location: ../index.php");
 }
 }
 ?>
