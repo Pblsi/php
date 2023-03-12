@@ -47,3 +47,7 @@ if (isset($_SESSION['user_role'])) {
                     </li> -->
             </ul>
         </div>
+
+        </div>
+        
+    </nav>

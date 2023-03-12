@@ -147,18 +147,43 @@ if(isset($_POST['checkBoxArray'])) {
 
 <?php
 
-if(isset($_GET['delete'])) {
-    $the_post_id = $_GET['delete'];
-    $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
-    $delete_query = mysqli_query($connection, $query);
-    header ("Location: ../posts.php");
+if(isset($_GET['delete'])){
+    $post_id = $_GET['p_id'];
+    if(is_the_logged_in_user_owner($post_id)){
+       $stmt = stmtConnection();
+        mysqli_stmt_prepare($stmt, "DELETE FROM posts WHERE post_id=?");
+        mysqli_stmt_bind_param($stmt, "i", $post_id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        redirect("posts.php");
+    }
 }
-
-if(isset($_GET['reset'])) {
-    $the_post_id = $_GET['reset'];
-    $query = "UPDATE posts SET post_views_count = 0 WHERE post_id =" . mysqli_real_escape_string($_GET['reset']) ." ";
-    $reset_query = mysqli_query($connection, $query);
-    header ("Location: ../posts.php");
+if(isset($_GET['reset'])){
+    $post_id = $_GET['p_id'];
+    if(is_the_logged_in_user_owner($post_id)){
+        $stmt = stmtConnection();
+        mysqli_stmt_prepare($stmt, "UPDATE posts SET post_views_count=0 WHERE post_id=?");
+        mysqli_stmt_bind_param($stmt, "i", $post_id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        redirect("posts.php");
+    }
 }
-
 ?>
+<script>
+    $(document).ready(function(){
+        $(".delete_link").on('click', function(){
+            var id = $(this).attr("rel");
+            var delete_url = "posts.php?delete="+ id +" ";
+            $(".modal_delete_link").attr("href", delete_url);
+            $("#myModal").modal('show');
+
+        });
+    });
+    <?php if(isset($_SESSION['message'])){unset($_SESSION['message']);}?>
+</script>
+
+
+
+
+
