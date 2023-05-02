@@ -1,0 +1,65 @@
+OOP means object oriented programming and 
+it is a programming style.
+
+procedural : youre thinking on how to write the 
+code from top to bottom by defining the variable and print them.
+
+OOP: youre thinking in how to define into reusable components and
+use it. (bottom up Approach).
+
+THINKING IN OOP
+everything on the world can be defined as an object .
+start thinking and organise your code into smallercomponents
+and real life objects.
+stop thinking in procedural (variables and functions)
+start thinking in objects
+
+Class is a blueprint of an object.
+class is a logical grouping of code with variables and functions
+specific to that object.
+    the main purpose of class is to organise your code into
+    individual components.
+identify how you can organise your code into objects.
+example: Users,Data-base,Files,Post...etc.
+
+then start grouping those into classes.
+each class has variables and functions into related individual
+objects
+
+one class will hold many variabls and functions but it logically
+represent that object.
+
+classes help you to organise the variables and functions to
+individual components
+
+one class describe about one objects variables and functions.
+
+ORGANIZE classes
+first step is to identify classes in your program.
+
+start defining the classes.
+
+remember, classes are specifications are not real.
+
+Variables inside the class are called as properties.
+
+$name is a property of a class
+
+Methods are the functions inside the class
+
+properties help to define elements of a class, and Methods
+helps to perform some action in that class.
+
+Objects are used to access properties and Methodsof a class.
+you need to create an object of a class and start accessing the
+properties and call the methods of that class.
+Objects are also called as Instance of a class.
+you can create unlimited objects for a class.
+each object properties are unique to that specific Instance of the class
+
+the job of the user is to handle the user request and
+the job of a database will be connecting to a database class
+
+the users class can have two methods fetch users and delete users
+
+no sql is jason is a way to create a fake back end sever
