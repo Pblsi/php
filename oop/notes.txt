@@ -63,3 +63,95 @@ the job of a database will be connecting to a database class
 the users class can have two methods fetch users and delete users
 
 no sql is jason is a way to create a fake back end sever
+
+
+            The $this keyword
+allows us to access properties and methods of same class, indicates instance of this class.
+you dont have to declare $this keyword.
+it always refer to the properties and methods of that class.
+example: 
+cannot access the property of the class without an object 
+class Car {
+    public $name:
+    funtion printName(){
+        echo $name .PHP_EOL;
+    }
+}
+Access properties
+Class Car{
+    public $name="john smith";
+    function printName(){
+        echo $this->showName(). PHP_EOL;
+    }
+}
+$c = new Car();
+$c->printName();
+you cannot access $this outside the class it has to be inside the class
+
+
+                        CONSTRUCTOR
+every class has magic methods whivh gets called automatically.(predifined)
+Constructors are magic methods that gets loaded automatically when instance
+of a class is created.
+
+purpose of constructor is to initialize the properties of the class
+you can chose to define the property of a constructor or ignore it
+example
+class Car {
+    public
+    function__construct(){
+        $this->name="";//Initialize the properties
+    }
+}
+__construct([mixed $args="[,$...]]):void
+__construct() is called automatically when new instance is created and
+ does not return any value. arguments are optional.
+
+ DEFINE AND CALL CONSTRUCTOR
+ 
+ PURPOSE OF A CONSTRUCTOR
+ 1-- Initialize the properties of class
+ 2-- Initialize Database Connection
+ 3-- Check if File Exists.
+ 4-- Open the File before using it in methods
+ 5-- Check for internet connection.
+ 6-- Check API is reachable before the Connection
+ 7-- Load a instance of a class.
+ 8-- Load mandatory properties to execute the methods in a class.
+
+ Initialize THE properties WITH CONSTRUCTOR
+ always use the getter setter method to change the properties not
+  directly changing it from the instance
+
+  DESTRUCTORS
+Destructors are magic methods that gets loased automatically just before the
+instance of a class is destroyed.
+
+Purpose of it is to clean up activities.
+Example: closing Database connection or Saving File.
+you can chose to define Destructor method or ignore it as it is optional.
+
+defining a Destructor
+class Car {
+    public $dbConnection;
+    function__destructor(){
+        mysqli_close($dbConnection);
+    }
+}
+__destruct(void) :void
+__destruct() is called automatically before instance is destroyed and 
+it does not return any value. No arguments required.
+
+DEFINE AND CALL A DESTRUCTOR
+PURPOSE OF A DESTRUCTOR
+1-- perform the cleanup activities
+2-- close the database connection
+3-- close the file connection.
+4-- save the log file.
+5-- write activity logs - end time.
+6-- free up the resources.
+7-- save the properties into a file.
+8-- save the cache
+9-- serialize the objects
+
+HOW TO CHAIN METHODS AND PROPERTIES:

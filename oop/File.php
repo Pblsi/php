@@ -1,35 +1,28 @@
 <?php
 
-class File{
+class Files
+{
 
     function displayContent($filename){
-        // check if file exist
-        if(!file_exists($filename)){
-            
-            echo "$filename doesnt exist" . PHP_EOL;
-            return;
-        }
-        // else get the output and print
-        echo file_get_contents($filename) . PHP_EOL;
-
-    }
-
-    function getContent($filename) : string{
-   if(!file_exists($filename))
-   {
-    echo "$filename doesnt exist" . PHP_EOL;
-    return "";
-   }
-//    load into variable and return
-   $content = file_get_contents($filename);
-   return $content;
-    }
+if(!file_exists($filename)){
+    echo "$filename does not exist" . PHP_EOL;
+    return;
+}
+    echo file_get_contents($filename) . PHP_EOL;
 }
 
+function getContent($filename) : string{
+    if(!file_exists($filename)){
+        echo "$filename does not exist" . PHP_EOL;
+        return "";
+    }
+    $content = file_get_contents($filename);
+    return $content  .PHP_EOL;
+}
+}
 $file1 = new Files();
-$file1->displayContent()
-
-
+$file1->displayContent("Test.txt");
+echo "here is your file content: " . $file1->getContent("Test.txt");
 
 
 ?>

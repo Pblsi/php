@@ -6,7 +6,7 @@ class Employee {
     public $id;
     public $name;
     public $workingHoursPerDay = 8;
-    public $hourlyRate = 15;
+    public $hourlyRate = "15";
     public $totalLeaveTaken;
     public $workingDays;
     
