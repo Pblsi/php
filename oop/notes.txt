@@ -155,3 +155,131 @@ PURPOSE OF A DESTRUCTOR
 9-- serialize the objects
 
 HOW TO CHAIN METHODS AND PROPERTIES:
+
+ACCESS MODIFIERS
+access MODIFIERS helps to restrict the access of properties or methods.
+3types (public, private and protected).
+they help to hide the properties and methods accessed from the object.
+
+PUBLIC ACCESS MODIFIERS:public keyword before properties and methods.
+
+PRIVATE ACCESS MODIFIERS:private keyword before properties and methods.
+private access MODIFIERS means it can be accessed only
+inside and cannot be accessed from outside the class.
+methods and properties has to be marked private to make it private methods and properties.
+'PRIVATE' access modifiers can be applied only to class properties and methods.
+modifiers are always placed in front.
+
+INHERITANCE - REUSEAblILITY - EXTENDABILITY
+
+PROTECTED ACCESS MODIFIERS
+the PROTECTED ACCESS MODIFIERS means it can be accessed inside the
+child and parent class only.
+methods and properties marked as protected can be accessed from parent 
+and its child class.
+protected properties cannot be accessed from outside using objects.
+protected still behave as private but only parent and child can access it.
+modifiers are always placed in front like public and private.
+PROTECTED ACCESS CONTROL MODIFIERS IN INHERITANCE.
+
+OVERRIDING METHODS AND PROPERTIES:CHILD CLASS overrides parent,
+overriding a method can be done by writing/re-writing
+the same method in the child class;
+USECASE:INHERITANCE with teacher class
+
+    FINAL KEYWORD PREVENTS OVERRIDING FROM CHILD 
+Class as final = prevents inheritance
+Method as Final = prevents Method Overriding
+
+INNTERFACE-FRAMEWORK
+you cannot define methods in interface. All the methods in interface
+ has to be just definitions.
+
+interface are like FRAMEWORK or structure that every class must define it
+when they implement the interface.
+
+Any Class can implement one or many interface.
+
+Class that implement interface has to define all the methods of interface
+else it will give error.
+
+HOW TO DECLARE AND IMPLEMENT INNTERFACE
+Note on Interface:
+Interfaces are like guideline or contract.
+When you want to control how a class should be defined then you can define
+some guideline using interface and ask all the implementation class to follow it.
+
+A server can implement the code and give a interface to call that 
+methods with the required parameters.
+
+Think like WSDL OR YAML OR XSD are like definitions of how somthing is implemented.
+XML ARE like Class.
+
+ABSTRACT CLASSES AND METHODS:
+Abstract are Class that we do not want to create an/any object
+
+A class is called abstract when it has least one abstract methods inside it.
+
+methods tht are decleared as abstract must be defined in the child class.
+
+Abstract class are like interface but abstract class 
+can have normal methods implementation.
+
+Utility Class is a good example of Abstract Class.
+
+Abstract class means you do not want to create instance of this class but its\
+methods in child classes.
+
+you want to enforce child to implement some methods before using this class methods.
+
+Abstract Class are libraries class that you want to extend and use its libraries methods.
+
+STATIC METHODS AND PROPERTIES
+when you want to access class methods or properties, without an instance then 
+they are marked as Static.
+Method and properties are marked as static so that it can be access 
+with class name directly.
+
+(::) - Scope resolution Operator is used to access static methods and properties
+with class name.
+Example: Car::applyBreak();
+STATIC keyword when applied to methods or properties make them 
+accessible without instance
+
+DEFINE AND ACCESS STATIC METHODS AND PROPERTIES.
+
+USE CASE OF STATIC METHODS AND PROPERTIES:
+Utility Class is a good example of static Class.
+Defining Method and properties as static you can access them with class name
+Instead of writing functions outside you can write static class and define 
+functions inside it.
+Most common use case of static methods and properties are library function and 
+reusable code.
+
+SELF KEYWORD
+
+POLYMORPHISM 
+Polymorphism is a concept in oop that means every parent suggest what
+functionality to implement and sub classes choose to implement that
+functionality differently.
+
+POLY means many and MORPIC means form.
+Polymorphism means many forms of same method.
+
+Polymorphism is achieved by using the same names in different classes and 
+derived from same parent.
+
+DATA ENCAPSULATION
+Data Encapsulation is an oop concept which means in the class you hide the
+properties and make them access only via methods.
+
+properties are marked as private and define public getProperty and seProperty
+methods to access that properties.
+
+Data Encapsulation is a design pattern or concept you can choose to implement
+in your coding style
+
+Getter and Setter methods are defined with standard naming conventions.
+
+DATA ABSTRACTION
+
