@@ -283,3 +283,33 @@ Getter and Setter methods are defined with standard naming conventions.
 
 DATA ABSTRACTION
 
+
+OVERRIDING:
+its a concept in oop where child can override (rewrite) the parent methods
+with the same name.
+Parent class might just be defined basic and standard funtionality of that method.
+child can override and rewire it.
+PHP allows to use the same method of parent class in child class. 
+when method is called child methods are called.
+
+OVERRIDE is a oop concept which helps to rewrite same methods
+inherited from the parent.
+
+OVERLOADING
+same class same function but different parameters.
+
+MAGIC METHODS
+they are default methods available for any class and invoked automatically 
+depending on the triggers.
+
+set and get method is called wen somthing is not accessible.
+call method
+toString method
+debuginfo method
+
+all magic methods must be declared as public.
+
+TYPE HINTING
+
+DEPENDENCY INJECTION
+
