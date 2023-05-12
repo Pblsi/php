@@ -313,3 +313,23 @@ TYPE HINTING
 
 DEPENDENCY INJECTION
 
+CLONING
+
+SERIALIZE means to save and read the object and it does not expires
+it gets deleted and recreated on specified duration
+
+CACHE is basically rapper of serialization
+
+IDENTITY OPERATOR IS CHECKING FOR THE SAME INSTANCE VARIABLE
+
+COMPARISON OPERATOR IS CHECKING INSIDE THE PROPERTY.if they have property, 
+what is the value of those properties.
+
+ITERATING OBJECTS
+
+TRIATS
+.limitation: you cannot extend more than one class.
+.multiple inheritance is not possible in php.7.
+.to resolve this issue you can create class and use it into another class
+without ectending it.
+.you define your class as traits and include multiple inheritance.
